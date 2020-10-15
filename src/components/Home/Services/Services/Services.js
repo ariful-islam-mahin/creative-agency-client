@@ -22,7 +22,7 @@ const Services = () => {
                     services.length === 0 && <CircularProgress className="mx-auto" />
                 }
                 {
-                    services.map(service => <Service service={service}/>)
+                    services.map((service, idx) => <Service key={idx} service={service}/>)
                 }
             </div>
         </section>

@@ -2,7 +2,6 @@ import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const AdminOrderListTable = ({orderList}) => {
-    console.log(orderList)
     return (
         <div className="px-3">
             <table className="table">

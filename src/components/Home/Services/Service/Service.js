@@ -10,7 +10,6 @@ const Service = ({service}) => {
         setServiceData(data);
     }
 
-    console.log(isAdmin)
     return (
         <div className="col-md-4 mb-4">
             <Link to={isAdmin ? "/adminOrderList" : "/order"} style={{ textDecoration: 'none' }}>

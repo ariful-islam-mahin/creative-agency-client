@@ -35,7 +35,6 @@ const OrderForm = () => {
         e.preventDefault()
     }
 
-    console.log(serviceData)
     return (
         <div className="py-5 w-50 px-3 dashboard">
             <h3 className="mb-4">Order</h3>

@@ -24,8 +24,6 @@ const AdminOrderList = () => {
         })
     }, [])
 
-    console.log(orderList)
-
     return (
         <div>
             <Topbar/>
