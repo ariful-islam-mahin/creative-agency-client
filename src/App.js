@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
@@ -12,10 +12,8 @@ import OrderList from './components/OrderList/OrderList/OrderList';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-
 
 export const UserContext = createContext();
 
@@ -23,7 +21,7 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [serviceData, setServiceData] = useState({});
   const [isAdmin, setIsAdmin] = useState(false);
-  
+
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser, serviceData, setServiceData, isAdmin, setIsAdmin]}>
       <Router>

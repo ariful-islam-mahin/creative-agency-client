@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { UserContext } from '../../../App';
 import agencyLogo from '../../../images/logos/logo.png';
 import * as firebase from "firebase/app";
@@ -12,18 +12,18 @@ const Login = () => {
     const [loggedInUser, setLoggedInUser, serviceData, setServiceData, isAdmin, setIsAdmin] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
-    const { from } = location.state || { from: { pathname: `/${isAdmin ? "adminOrderList" : "order"}` } };
+    const { from } = location.state || { from: { pathname: "/" } };
 
     const handleGoogleSignIn = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
-        .then(function (result) {
+        .then(result => {
           const { displayName, email, photoURL } = result.user;
           const signedInUser = { name: displayName, email:email, img:photoURL }
           setLoggedInUser(signedInUser);
           storeAuthToken();
           if(result){
-            alert('user logged in successfully')
+            console.log('user logged in successfully');
           }
         })
         .catch(error => {
@@ -42,6 +42,19 @@ const Login = () => {
             console.log(error)
           });
       }
+
+      useEffect(() => {
+        fetch('https://mysterious-headland-87886.herokuapp.com/isAdmin', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({email: loggedInUser.email})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setIsAdmin(data)
+        })
+    }, [loggedInUser])
 
     return (
         <div className="text-center">

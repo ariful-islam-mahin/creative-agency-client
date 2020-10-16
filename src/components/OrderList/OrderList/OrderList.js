@@ -25,7 +25,7 @@ const OrderList = () => {
     }, [])
 
     return (
-        <div style={{overflowX:'hidden'}}>
+        <div style={{overflowX:'auto'}}>
             <Topbar/>
             <div className="row">
                 <Sidebar/>

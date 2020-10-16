@@ -1,16 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
 
 const OrderForm = () => {
     const [loggedInUser, setLoggedInUser, serviceData, setServiceData, isAdmin, setIsAdmin] = useContext(UserContext);
-    // const [file, setFile] = useState(null);
-
-    // const handleFileChange = e => {
-    //     const newFile = e.target.files[0];
-    //     setFile(newFile)
-    // }
 
     const handleSubmit = (e) => {
         const orderInfo = {
