@@ -22,7 +22,7 @@ const OrderForm = () => {
             serviceIcon: serviceData.icon.img
         }
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://mysterious-headland-87886.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(orderInfo)

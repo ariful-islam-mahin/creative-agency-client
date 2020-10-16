@@ -2,7 +2,6 @@ import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const UserOrderList = ({orderList}) => {
-    // const {serviceIcon, serviceName, serviceDetail} = order;
     return (
         <div className="row">
             {
