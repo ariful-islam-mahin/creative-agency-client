@@ -31,7 +31,7 @@ const OrderForm = () => {
     }
 
     return (
-        <div className="py-5 w-50 px-3 dashboard">
+        <div className="py-5 w-50 px-4 dashboard">
             <h3 className="mb-4">Order</h3>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="name" className="form-control py-4" defaultValue={loggedInUser.name} placeholder="Your name/company's name" required/>

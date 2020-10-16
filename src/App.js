@@ -14,6 +14,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Dashboard from './components/Dashboard/Dashboard';
 
 export const UserContext = createContext();
 
@@ -46,6 +47,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/addAdmin">
             <AddAdmin></AddAdmin>
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
           </PrivateRoute>
           <Route exact path="/">
             <Home></Home>

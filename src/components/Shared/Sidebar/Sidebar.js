@@ -11,6 +11,14 @@ const Sidebar = () => {
     return (
         <div className="sidebar d-flex flex-column col-md-3 justify-content-between p-5">
             <ul className="list-unstyled">
+                {
+                    isAdmin === false && 
+                    <li>
+                        <Link to="/order" className="text-dark">
+                            <FontAwesomeIcon icon={faShoppingCart} /> <span className="ml-2">Order</span> 
+                        </Link>
+                    </li>
+                }
                 <li>
                     <Link to="orderList" className="text-dark">
                         <FontAwesomeIcon icon={faListAlt} /> <span className="ml-2">Service List</span> 
@@ -31,11 +39,6 @@ const Sidebar = () => {
                         </li>
                     </div> :
                     <div>
-                        <li>
-                            <Link to="/order" className="text-dark">
-                                <FontAwesomeIcon icon={faShoppingCart} /> <span className="ml-2">Order</span> 
-                            </Link>
-                        </li>
                         <li>
                             <Link to="/review" className="text-dark">
                                 <FontAwesomeIcon icon={faCommentAlt} /> <span className="ml-2">Review</span>

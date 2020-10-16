@@ -12,7 +12,7 @@ const Service = ({service}) => {
 
     return (
         <div className="col-md-4 mb-4">
-            <Link to={isAdmin ? "/orderList" : "/order"} style={{ textDecoration: 'none' }}>
+            <Link to="/dashboard" style={{ textDecoration: 'none' }}>
                 <div style={{height:'320px'}} onClick={() => handleSelectService(service)} className="service-item d-flex flex-column justify-content-center p-4 rounded">
                     <img className="mx-auto mb-3" style={{width:'60px', borderRadius:'50%'}} src={`data:icon/jpeg;base64,${service.icon.img}`} alt=""/>
                     <h4 className="text-dark font-weight-bold">{title}</h4>
