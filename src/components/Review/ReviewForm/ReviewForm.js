@@ -11,7 +11,7 @@ const ReviewForm = () => {
             companyName: e.target.companyName.value,
             description: e.target.description.value
         }
-        fetch('https://mysterious-headland-87886.herokuapp.com/addReview', {
+        fetch('http://localhost:5000/addReview', {
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(review)

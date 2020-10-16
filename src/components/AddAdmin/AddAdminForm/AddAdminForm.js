@@ -6,7 +6,7 @@ const AddAdminForm = () => {
         const admin = {
             email: e.target.email.value
         }
-        fetch('https://mysterious-headland-87886.herokuapp.com/addAdmin', {
+        fetch('http://localhost:5000/addAdmin', {
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(admin)

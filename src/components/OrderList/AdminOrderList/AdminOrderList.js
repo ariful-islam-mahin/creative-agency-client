@@ -1,7 +1,7 @@
 import React from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const AdminOrderListTable = ({orderList}) => {
+const AdminOrderList = ({orderList}) => {
     return (
         <div className="px-3">
             <table className="table">
@@ -33,4 +33,4 @@ const AdminOrderListTable = ({orderList}) => {
     );
 };
 
-export default AdminOrderListTable;
+export default AdminOrderList;

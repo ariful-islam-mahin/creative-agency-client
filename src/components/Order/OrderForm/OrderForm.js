@@ -5,26 +5,27 @@ import { UserContext } from '../../../App';
 
 const OrderForm = () => {
     const [loggedInUser, setLoggedInUser, serviceData, setServiceData, isAdmin, setIsAdmin] = useContext(UserContext);
-    const [file, setFile] = useState(null);
+    // const [file, setFile] = useState(null);
 
-    const handleFileChange = e => {
-        const newFile = e.target.files[0];
-        setFile(newFile)
-    }
+    // const handleFileChange = e => {
+    //     const newFile = e.target.files[0];
+    //     setFile(newFile)
+    // }
 
     const handleSubmit = (e) => {
-        const formData = new FormData()
-        formData.append('file', file);
-        formData.append('name', e.target.name.value);
-        formData.append('email', e.target.email.value);
-        formData.append('serviceName', serviceData.title);
-        formData.append('serviceDetail', serviceData.description);
-        formData.append('projectDetail', e.target.projectDetail.value);
-        formData.append('serviceIcon', serviceData.icon.img);
+        const orderInfo = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            serviceName: serviceData.title,
+            serviceDetail: serviceData.description,
+            projectDetail: e.target.projectDetail.value,
+            serviceIcon: serviceData.icon.img
+        }
 
-        fetch('https://mysterious-headland-87886.herokuapp.com/addOrder', {
+        fetch('http://localhost:5000/addOrder', {
             method: 'POST',
-            body: formData
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(orderInfo)
         })
         .then(res => res.json())
         .then(success => {
@@ -51,8 +52,8 @@ const OrderForm = () => {
                     <input type="text" name="price" className="form-control mb-4 py-4 col-md-6 w-100" placeholder="Price" required/>
 
                     <div className="col-md-6">
-                        <label for="files" className="btn btn-outline-success w-100"><FontAwesomeIcon icon={faCloudUploadAlt} />  Upload project file</label>
-                        <input type="file" onChange={handleFileChange} name="picture" style={{display:'none'}} id="files" required/>
+                        <label htmlFor="files" className="btn btn-outline-success w-100"><FontAwesomeIcon icon={faCloudUploadAlt} />  Upload project file</label>
+                        <input type="file"  name="picture" style={{display:'none'}} id="files" />
                     </div>
                 </div>
                 <button type="submit" className="btn btn-dark px-5 mt-3">Send</button>

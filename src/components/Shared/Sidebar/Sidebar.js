@@ -11,7 +11,7 @@ const Sidebar = () => {
     const [loggedInUser, setLoggedInUser, serviceData, setServiceData, isAdmin, setIsAdmin] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('https://mysterious-headland-87886.herokuapp.com/isAdmin', {
+        fetch('http://localhost:5000/isAdmin', {
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({email: loggedInUser.email})
@@ -24,7 +24,8 @@ const Sidebar = () => {
         <div className="sidebar d-flex flex-column col-md-3 justify-content-between p-5">
             <ul className="list-unstyled">
                 <li>
-                    <Link to={isAdmin ? "/adminOrderList" : "/userOrderList"} className="text-dark">
+                    {/* {isAdmin ? "/adminOrderList" : "/OrderList"} */}
+                    <Link to="orderList" className="text-dark">
                         <FontAwesomeIcon icon={faListAlt} /> <span className="ml-2">Service List</span> 
                     </Link>
                 </li>

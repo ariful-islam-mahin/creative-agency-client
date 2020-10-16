@@ -16,7 +16,7 @@ const AddServiceForm = () => {
         formData.append('title', e.target.title.value);
         formData.append('description', e.target.description.value);
 
-        fetch('https://mysterious-headland-87886.herokuapp.com/addService', {
+        fetch('http://localhost:5000/addService', {
             method: 'POST',
             body: formData
         })

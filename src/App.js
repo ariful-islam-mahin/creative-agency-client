@@ -7,15 +7,15 @@ import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import Review from './components/Review/Review/Review';
 import AddService from './components/AddService/AddService/AddService';
 import AddAdmin from './components/AddAdmin/AddAdmin/AddAdmin';
-import AdminOrderList from './components/AdminOrderList/AdminOrderList/AdminOrderList';
-import UserOrderList from './components/UserOrderList/UserOrderList/UserOrderList';
 import NoMatch from './components/NoMatch/NoMatch';
+import OrderList from './components/OrderList/OrderList/OrderList';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+
 
 export const UserContext = createContext();
 
@@ -37,11 +37,8 @@ function App() {
           <PrivateRoute path="/order">
             <Order></Order>
           </PrivateRoute>
-          <PrivateRoute path="/userOrderList">
-            <UserOrderList></UserOrderList>
-          </PrivateRoute>
-          <PrivateRoute path="/adminOrderList">
-            <AdminOrderList></AdminOrderList>
+          <PrivateRoute path="/orderList">
+            <OrderList></OrderList>
           </PrivateRoute>
           <PrivateRoute path="/review">
             <Review></Review>
