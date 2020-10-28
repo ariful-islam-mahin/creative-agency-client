@@ -3,8 +3,8 @@
 This project is full stack project. In home page have some services, carousel, client feedback and a form. In user dashboard have 3 options. Order, Service List and Review. In admin dashboard have also 3 options. Service List, Add Service and Make Admin.
 
 ###### Features :
-* People can select and order a service.
-* People can see his/her order list and add a review.
+* User can select and order a service.
+* User can see his/her order list and add a review.
 * Admin can add service and added service also show on the website.
 * Admin can see all order lists.
 * Admin can make another admin.
