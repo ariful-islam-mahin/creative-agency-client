@@ -1,4 +1,3 @@
-[I'm an inline-style link](https://creative-agency0.web.app/)
 # Creative Agency
 
 This project is full stack project. In home page have some services, carousel, client feedback and a form. In user dashboard have 3 options. Order, Service List and Review. In admin dashboard have also 3 options. Service List, Add Service and Make Admin.
