@@ -7,6 +7,7 @@ This project is full stack project. In home page have some services, carousel, c
 * People can see his/her order list and add a review.
 * Admin can add service and added service also show on the website.
 * Admin can see all order lists.
+* Admin can make another admin.
 
 ###### Technology : 
 JavaScript, React, React-Router, HTML, CSS, Bootstrap, NodeJS, ExpressJS, MongoDB,
