@@ -32,11 +32,6 @@ const Sidebar = () => {
                                 <FontAwesomeIcon icon={faPlus} /> <span className="ml-2">Add Service</span>
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/addAdmin" className="text-dark">
-                                <FontAwesomeIcon icon={faUserPlus} /> <span className="ml-2">Make Admin</span>
-                            </Link>
-                        </li>
                     </div> :
                     <div>
                         <li>
@@ -46,6 +41,11 @@ const Sidebar = () => {
                         </li>
                     </div>
                 }
+                <li>
+                    <Link to="/addAdmin" className="text-dark">
+                        <FontAwesomeIcon icon={faUserPlus} /> <span className="ml-2">Make Admin</span>
+                    </Link>
+                </li>
             </ul>
         </div>
     );
